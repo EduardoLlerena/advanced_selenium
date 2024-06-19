@@ -1,0 +1,72 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<!--thread-count to run parallel, along with parallel attribute-->
+<suite name="NegativeLoginTestSuite" verbose="1" parallel ="tests" thread-count="1">
+
+	<test name="NegativeUsernameTest-CH">
+		<parameter name="username" value="incorrectUsername"></parameter>
+		<parameter name="password" value="SuperSecretPassword!"></parameter>
+		<parameter name="expectedMessage" value="Your username is invalid!"></parameter>
+		<parameter name="browser" value="chrome"></parameter>
+		<classes>
+			<class name="com.herokuapp.theinternet.loginpagetest.NegativeLoginTests">
+				<methods>
+					<include name="negativeTest"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="NegativeUsernameTest-FF">
+		<parameter name="username" value="incorrectUsername"></parameter>
+		<parameter name="password" value="SuperSecretPassword!"></parameter>
+		<parameter name="expectedMessage" value="Your username is invalid!"></parameter>
+		<parameter name="browser" value="firefox"></parameter>
+		<classes>
+			<class name="com.herokuapp.theinternet.loginpagetest.NegativeLoginTests">
+				<methods>
+					<include name="negativeTest"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="NegativePasswordTest-CH">
+		<parameter name="username" value="tomsmith"></parameter>
+		<parameter name="password" value="incorrectPassword"></parameter>
+		<parameter name="expectedMessage" value="Your password is invalid!"></parameter>
+		<parameter name="browser" value="chrome"></parameter>
+		<classes>
+			<class name="com.herokuapp.theinternet.loginpagetest.NegativeLoginTests">
+				<methods>
+					<include name="negativeTest"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="NegativePasswordTest-FF">
+		<parameter name="username" value="tomsmith"></parameter>
+		<parameter name="password" value="incorrectPassword"></parameter>
+		<parameter name="expectedMessage" value="Your password is invalid!"></parameter>
+		<parameter name="browser" value="firefox"></parameter>
+		<classes>
+			<class name="com.herokuapp.theinternet.loginpagetest.NegativeLoginTests">
+				<methods>
+					<include name="negativeTest"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="NegativeTestWithCSV-CH">
+		<classes>
+			<class name="com.herokuapp.theinternet.loginpagetest.NegativeLoginTests">
+				<methods>
+					<include name="negativeTestWithSpreadsheetParameters"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+</suite>

@@ -1,0 +1,33 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="DropdownTestSuite" verbose="1">
+
+    <test name="DropdownTest-chromeHeadless">
+        <parameter name="browser" value="chromeHeadless"></parameter>
+        <classes>
+            <class name="com.herokuapp.theinternet.dropdowntests.Dropdowntests" />
+        </classes>
+    </test>
+
+    <test name="DropdownTest-firefoxHeadless">
+        <parameter name="browser" value="firefoxHeadless"></parameter>
+        <classes>
+            <class name="com.herokuapp.theinternet.dropdowntests.Dropdowntests" />
+        </classes>
+    </test>
+
+    <test name="DropdownTest-phantomjs">
+        <parameter name="browser" value="phantomjs"></parameter>
+        <classes>
+            <class name="com.herokuapp.theinternet.dropdowntests.Dropdowntests" />
+        </classes>
+    </test>
+
+    <test name="DropdownTest-htmlunit">
+        <parameter name="browser" value="htmlunit"></parameter>
+        <classes>
+            <class name="com.herokuapp.theinternet.dropdowntests.Dropdowntests" />
+        </classes>
+    </test>
+
+</suite>
